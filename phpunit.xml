@@ -1,0 +1,21 @@
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.3/phpunit.xsd"
+    backupGlobals="true"
+    cacheTokens="false">
+
+    <testsuite name="default">
+
+        <directory>test</directory>
+
+    </testsuite>
+
+    <filter>
+
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+
+    </filter>
+
+</phpunit>
