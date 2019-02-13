@@ -7,7 +7,7 @@ use NijmegenSync\DataSource\Harvesting\HarvestingFrequency;
 use NijmegenSync\DataSource\Harvesting\IDataSourceHarvester;
 use NijmegenSync\DataSource\IDataSourceManager;
 use NijmegenSync\DataSource\Rapportenzoeker\BuildRule\BuildRuleAbstractFactory;
-use NijmegenSync\DataSource\Rapportenzoeker\Harvester\RapportenzoekerDataSourceHarvester;
+use NijmegenSync\DataSource\Rapportenzoeker\Harvesting\RapportenzoekerDataSourceHarvester;
 use NijmegenSync\Exception\InitializationException;
 use NijmegenSync\Exception\IOException;
 
