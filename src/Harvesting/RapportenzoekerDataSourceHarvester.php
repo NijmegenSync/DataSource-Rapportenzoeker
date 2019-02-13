@@ -65,6 +65,26 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
         }
     }
 
+    /**
+     * Setter for the base_uri property.
+     *
+     * @param string $uri The uri to set
+     */
+    public function setBaseURI(string $uri): void
+    {
+        $this->base_uri = $uri;
+    }
+
+    /**
+     * Getter for the base_uri property, may return null.
+     *
+     * @return string The base_uri value
+     */
+    public function getBaseUri(): string
+    {
+        return $this->base_uri;
+    }
+
     private function extractDatasets(StreamInterface $response_body): array
     {
         $datasets          = [];
@@ -94,7 +114,7 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 $client = new Client([]);
 
                 try {
-                    $response = $client->request('HEAD', $resource['accessURL']);
+                    $response         = $client->request('HEAD', $resource['accessURL']);
                     $resource['size'] = $response->getHeaderLine('Content-Length');
                 } catch (GuzzleException $e) {
                     continue;
@@ -123,8 +143,8 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
 
             if (\count($type) > 0) {
                 $resource['description'] = $type->item(0)->nodeValue;
-                $resource['format'] = $type->item(0)->nodeValue;
-                $resource['mediaType'] = $type->item(0)->nodeValue;
+                $resource['format']      = $type->item(0)->nodeValue;
+                $resource['mediaType']   = $type->item(0)->nodeValue;
             }
 
             $dataset['resources'][] = $resource;
@@ -132,25 +152,5 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
         }
 
         return $datasets;
-    }
-
-    /**
-     * Setter for the base_uri property.
-     *
-     * @param string $uri The uri to set
-     */
-    public function setBaseURI(string $uri): void
-    {
-        $this->base_uri = $uri;
-    }
-
-    /**
-     * Getter for the base_uri property, may return null.
-     *
-     * @return string The base_uri value
-     */
-    public function getBaseUri(): string
-    {
-        return $this->base_uri;
     }
 }
