@@ -1,8 +1,8 @@
 <?php
 
-namespace NijmegenSync\Test\DataSource\Rapportenzoeker\Harvester;
+namespace NijmegenSync\Test\DataSource\Rapportenzoeker\Harvesting;
 
-use NijmegenSync\DataSource\Rapportenzoeker\Harvester\RapportenzoekerDataSourceHarvester;
+use NijmegenSync\DataSource\Rapportenzoeker\Harvesting\RapportenzoekerDataSourceHarvester;
 use PHPUnit\Framework\TestCase;
 
 class RapportenzoekerDataSourceHarvesterTest extends TestCase
