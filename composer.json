@@ -1,5 +1,5 @@
 {
-    "name": "NijmegenSync/DataSource-Rapportenzoeker",
+    "name": "nijmegensync/datasource-rapportenzoeker",
     "description": "Contains the functionality to harvest the Nijmegen Rapportenzoeker.",
     "keywords": [],
     "homepage": "https://github.com/NijmegenSync/DataSource-Rapportenzoeker",
