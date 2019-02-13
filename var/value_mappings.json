@@ -1,2 +1,35 @@
 {
+    "theme": {
+        "Bestuur":               "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Bevolking":             "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Burgerparticipatie":    "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Cultuur":               "http://standaarden.overheid.nl/owms/terms/Cultuur_(thema)",
+        "Dienstverlening":       "http://standaarden.overheid.nl/owms/terms/Economie",
+        "Duurzaamheid":          "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
+        "Fysieke leefomgeving":  "http://standaarden.overheid.nl/owms/terms/Ruimte_en_infrastructuur",
+        "Gezondheid en Zorg":    "http://standaarden.overheid.nl/owms/terms/Zorg_en_gezondheid",
+        "Integratie":            "http://standaarden.overheid.nl/owms/terms/Integratie_(thema)",
+        "Jeugd":                 "http://standaarden.overheid.nl/owms/terms/Jongeren_(thema)",
+        "Milieu":                "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
+        "Onderwijs":             "http://standaarden.overheid.nl/owms/terms/Onderwijs_en_wetenschap",
+        "Ouderen":               "http://standaarden.overheid.nl/owms/terms/Ouderen",
+        "Werk en Inkomen":       "http://standaarden.overheid.nl/owms/terms/Werk_(thema)",
+        "Sociale omgeving":      "http://standaarden.overheid.nl/owms/terms/Sociale_zekerheid",
+        "Sport":                 "http://standaarden.overheid.nl/owms/terms/Sport_(thema)",
+        "Stadseconomie":         "http://standaarden.overheid.nl/owms/terms/Economie",
+        "Stads- en Wijkmonitor": "http://standaarden.overheid.nl/owms/terms/Gemeenten",
+        "Toerisme":              "http://standaarden.overheid.nl/owms/terms/Toerisme",
+        "Veiligheid":            "http://standaarden.overheid.nl/owms/terms/Openbare_orde_en_veiligheid",
+        "Verkeer en Vervoer":    "http://standaarden.overheid.nl/owms/terms/Verkeer_(thema)",
+        "Woningmarkt":           "http://standaarden.overheid.nl/owms/terms/Huisvesting_(thema)"
+    },
+    "resource.description": {
+        "pdf":                   "Het rapport in PDF formaat"
+    },
+    "resource.format": {
+        "pdf":                   "http://publications.europa.eu/resource/authority/file-type/PDF"
+    },
+    "resource.mediaType": {
+        "pdf":                   "https://www.iana.org/assignments/media-types/application/pdf"
+    }
 }

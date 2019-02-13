@@ -1,8 +1,8 @@
 {
     "name":                         "rapportenzoeker",
-    "web_address":                  "https://www.nijmegen.nl/rapportenzoeker/lijst/",
+    "web_address":                  "https://www.nijmegen.nl/rapportenzoeker/",
     "harvesting_frequency":         "monthly",
-    "base_uri":                     "https://www.nijmegen.nl/rapportenzoeker/lijst/",
+    "base_uri":                     "https://www.nijmegen.nl/",
     "defaults_file_path":           "defaults.json",
     "value_mappings_file_path":     "value_mappings.json",
     "blacklist_mappings_file_path": "blacklist_mappings.json",
