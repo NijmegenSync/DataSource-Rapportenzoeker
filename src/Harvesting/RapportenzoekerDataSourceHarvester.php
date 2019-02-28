@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use NijmegenSync\Contracts\IAuthenticationDetails;
 use NijmegenSync\DataSource\Harvesting\DataSourceUnavailableHarvestingException;
+use NijmegenSync\DataSource\Harvesting\HarvestResult;
 use NijmegenSync\DataSource\Harvesting\IDataSourceHarvester;
 use Psr\Http\Message\StreamInterface;
 
@@ -173,7 +174,10 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
 
             $dataset['modified'] = \sprintf('%s-12-31', $dataset['modified']);
 
-            $datasets[] = $dataset;
+            $harvest_result = new HarvestResult();
+            $harvest_result->setResult($dataset);
+
+            $datasets[] = $harvest_result;
         }
 
         return $datasets;
