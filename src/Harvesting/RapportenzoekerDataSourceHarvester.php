@@ -121,7 +121,7 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
             $dataset                = [];
             $dataset['identifier']  = \sprintf('https://opendata.nijmegen.nl/dataset/rapportenzoeker-%s', $this->sluggify($dataset_theme));
             $dataset['title']       = $dataset_theme;
-            $dataset['theme']       = $dataset_theme;
+            $dataset['theme']       = [$dataset_theme];
             $dataset['description'] = $dataset_theme;
 
             foreach ($raw_dataset as $potential_resource) {
@@ -134,8 +134,8 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 if (\count($modified) > 0) {
                     $modified_value = (int) $modified->item(0)->nodeValue;
 
-                    if (!\array_key_exists('modified', $dataset) || $dataset['modified'] < $modified_value) {
-                        $dataset['modified'] = $modified_value;
+                    if (!\array_key_exists('modificationDate', $dataset) || $dataset['modificationDate'] < $modified_value) {
+                        $dataset['modificationDate'] = $modified_value;
                     }
                 }
 
@@ -172,7 +172,7 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 $dataset['resources'][] = $resource;
             }
 
-            $dataset['modified'] = \sprintf('%s-12-31', $dataset['modified']);
+            $dataset['modificationDate'] = \sprintf('%s-12-31', $dataset['modificationDate']);
 
             $harvest_result = new HarvestResult();
             $harvest_result->setResult($dataset);
