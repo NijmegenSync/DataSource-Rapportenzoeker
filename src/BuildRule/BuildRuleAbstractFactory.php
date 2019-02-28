@@ -13,13 +13,15 @@ use NijmegenSync\Dataset\Builder\IDistributionBuildRule;
 class BuildRuleAbstractFactory
 {
     /**
-     * Returns all the defined custom build rules for the harvesting of the Nijmegen rapportenzoeker.
+     * Returns all the defined custom build rules for the harvesting of the Nijmegen
+     * rapportenzoeker.
      *
      * @return IDatasetBuildRule[] The custom build rules to use
      */
     public static function getAllDatasetBuildRules(): array
     {
         return [
+            'description' => new DescriptionDatasetBuildRule('description'),
         ];
     }
 

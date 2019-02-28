@@ -104,12 +104,4 @@ class RapportenzoekerDataSourceManagerTest extends TestCase
 
         $manager->initialize();
     }
-
-    public function testNoBuildRulesHaveBeenDefined(): void
-    {
-        $manager = new RapportenzoekerDataSourceManager();
-
-        $this->assertEquals([], $manager->getCustomDatasetBuildRules());
-        $this->assertEquals([], $manager->getCustomDistributionBuildRules());
-    }
 }

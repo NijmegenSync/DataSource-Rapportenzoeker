@@ -8,10 +8,12 @@
     "spatial_value":             "http://standaarden.overheid.nl/owms/terms/Nijmegen_(gemeente)",
     "frequency":                 "http://publications.europa.eu/resource/authority/frequency/UNKNOWN",
     "contact_point_name":        "Team Open Data, gemeente Nijmegen",
-    "contact_point_email":       "open-data@nijmegen.nl",
+    "contact_point_email":       "opendata@nijmegen.nl",
     "contact_point_website":     "https://opendata.nijmegen.nl",
     "dataset_status":            "http://data.overheid.nl/status/beschikbaar",
     "access_rights":             "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+    "documentation":             "https://nijmegen.nl/rapportenzoeker",
+    "resource.description":      "Geen omschrijving beschikbaar.",
     "resource.language":         "http://publications.europa.eu/resource/authority/language/NLD",
     "resource.metadataLanguage": "http://publications.europa.eu/resource/authority/language/NLD",
     "resource.license":          "http://creativecommons.org/publicdomain/zero/1.0/deed.nl"

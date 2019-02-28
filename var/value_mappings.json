@@ -1,35 +1,61 @@
 {
+    "title": {
+        "Bestuur":                 "Rapporten over het bestuur van Nijmegen",
+        "Bevolking":               "Rapporten over de bevolking van Nijmegen",
+        "Burgerparticipatie":      "Rapporten over de burgerparticipatie van Nijmegen",
+        "Cultuur":                 "Rapporten over de cultuur van Nijmegen",
+        "Dienstverlening":         "Rapporten over de dienstverlening van Nijmegen",
+        "Duurzaamheid":            "Rapporten over de duurzaamheid van Nijmegen",
+        "Fysieke leefomgeving":    "Rapporten over de leefomgeving van Nijmegen",
+        "Gezondheid en Zorg":      "Rapporten over de gezondheid en zorg van Nijmegen",
+        "Integratie":              "Rapporten over integratie van Nijmegen",
+        "Jeugd":                   "Rapporten over jeugd van Nijmegen",
+        "Milieu":                  "Rapporten over milieu van Nijmegen",
+        "Onderwijs":               "Rapporten over het onderwijs van Nijmegen",
+        "Ouderen":                 "Rapporten over de ouderen van Nijmegen",
+        "Werk en Inkomen":         "Rapporten over het werk en inkomen van Nijmegen",
+        "Sociale omgeving":        "Rapporten over de sociale leefomgeving van Nijmegen",
+        "Sport":                   "Rapporten over sport van Nijmegen",
+        "Stadseconomie":           "Rapporten over de stadseconomie van Nijmegen",
+        "Stads- en Wijkmonitor":   "Rapporten over de stads- en wijkmonitor van Nijmegen",
+        "SWM_afbeeldingen_online": "Illustraties van stads- en wijkmonitor van Nijmegen",
+        "Toerisme":                "Rapporten over toerisme van Nijmegen",
+        "Veiligheid":              "Rapporten over veiligheid van Nijmegen",
+        "Verkeer en Vervoer":      "Rapporten over het verkeer en vervoer van Nijmegen",
+        "Woningmarkt":             "Rapporten over de woningmarkt van Nijmegen"
+    },
     "theme": {
-        "Bestuur":               "http://standaarden.overheid.nl/owms/terms/Bestuur",
-        "Bevolking":             "http://standaarden.overheid.nl/owms/terms/Bestuur",
-        "Burgerparticipatie":    "http://standaarden.overheid.nl/owms/terms/Bestuur",
-        "Cultuur":               "http://standaarden.overheid.nl/owms/terms/Cultuur_(thema)",
-        "Dienstverlening":       "http://standaarden.overheid.nl/owms/terms/Economie",
-        "Duurzaamheid":          "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
-        "Fysieke leefomgeving":  "http://standaarden.overheid.nl/owms/terms/Ruimte_en_infrastructuur",
-        "Gezondheid en Zorg":    "http://standaarden.overheid.nl/owms/terms/Zorg_en_gezondheid",
-        "Integratie":            "http://standaarden.overheid.nl/owms/terms/Integratie_(thema)",
-        "Jeugd":                 "http://standaarden.overheid.nl/owms/terms/Jongeren_(thema)",
-        "Milieu":                "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
-        "Onderwijs":             "http://standaarden.overheid.nl/owms/terms/Onderwijs_en_wetenschap",
-        "Ouderen":               "http://standaarden.overheid.nl/owms/terms/Ouderen",
-        "Werk en Inkomen":       "http://standaarden.overheid.nl/owms/terms/Werk_(thema)",
-        "Sociale omgeving":      "http://standaarden.overheid.nl/owms/terms/Sociale_zekerheid",
-        "Sport":                 "http://standaarden.overheid.nl/owms/terms/Sport_(thema)",
-        "Stadseconomie":         "http://standaarden.overheid.nl/owms/terms/Economie",
-        "Stads- en Wijkmonitor": "http://standaarden.overheid.nl/owms/terms/Gemeenten",
-        "Toerisme":              "http://standaarden.overheid.nl/owms/terms/Toerisme",
-        "Veiligheid":            "http://standaarden.overheid.nl/owms/terms/Openbare_orde_en_veiligheid",
-        "Verkeer en Vervoer":    "http://standaarden.overheid.nl/owms/terms/Verkeer_(thema)",
-        "Woningmarkt":           "http://standaarden.overheid.nl/owms/terms/Huisvesting_(thema)"
+        "Bestuur":                 "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Bevolking":               "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Burgerparticipatie":      "http://standaarden.overheid.nl/owms/terms/Bestuur",
+        "Cultuur":                 "http://standaarden.overheid.nl/owms/terms/Cultuur_(thema)",
+        "Dienstverlening":         "http://standaarden.overheid.nl/owms/terms/Economie",
+        "Duurzaamheid":            "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
+        "Fysieke leefomgeving":    "http://standaarden.overheid.nl/owms/terms/Ruimte_en_infrastructuur",
+        "Gezondheid en Zorg":      "http://standaarden.overheid.nl/owms/terms/Zorg_en_gezondheid",
+        "Integratie":              "http://standaarden.overheid.nl/owms/terms/Integratie_(thema)",
+        "Jeugd":                   "http://standaarden.overheid.nl/owms/terms/Jongeren_(thema)",
+        "Milieu":                  "http://standaarden.overheid.nl/owms/terms/Natuur_en_milieu",
+        "Onderwijs":               "http://standaarden.overheid.nl/owms/terms/Onderwijs_en_wetenschap",
+        "Ouderen":                 "http://standaarden.overheid.nl/owms/terms/Ouderen",
+        "Werk en Inkomen":         "http://standaarden.overheid.nl/owms/terms/Werk_(thema)",
+        "Sociale omgeving":        "http://standaarden.overheid.nl/owms/terms/Sociale_zekerheid",
+        "Sport":                   "http://standaarden.overheid.nl/owms/terms/Sport_(thema)",
+        "Stadseconomie":           "http://standaarden.overheid.nl/owms/terms/Economie",
+        "Stads- en Wijkmonitor":   "http://standaarden.overheid.nl/owms/terms/Gemeenten",
+        "SWM_afbeeldingen_online": "http://standaarden.overheid.nl/owms/terms/Gemeenten",
+        "Toerisme":                "http://standaarden.overheid.nl/owms/terms/Toerisme",
+        "Veiligheid":              "http://standaarden.overheid.nl/owms/terms/Openbare_orde_en_veiligheid",
+        "Verkeer en Vervoer":      "http://standaarden.overheid.nl/owms/terms/Verkeer_(thema)",
+        "Woningmarkt":             "http://standaarden.overheid.nl/owms/terms/Huisvesting_(thema)"
     },
     "resource.description": {
-        "pdf":                   "Het rapport in PDF formaat"
+        "pdf":                     "Het rapport in PDF formaat"
     },
     "resource.format": {
-        "pdf":                   "http://publications.europa.eu/resource/authority/file-type/PDF"
+        "pdf":                     "http://publications.europa.eu/resource/authority/file-type/PDF"
     },
     "resource.mediaType": {
-        "pdf":                   "https://www.iana.org/assignments/media-types/application/pdf"
+        "pdf":                     "https://www.iana.org/assignments/media-types/application/pdf"
     }
 }

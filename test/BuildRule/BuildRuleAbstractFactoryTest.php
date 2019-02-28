@@ -11,7 +11,7 @@ class BuildRuleAbstractFactoryTest extends TestCase
     {
         $build_rules = BuildRuleAbstractFactory::getAllDatasetBuildRules();
 
-        $this->assertTrue(0 == \count($build_rules));
+        $this->assertTrue(1 == \count($build_rules));
     }
 
     public function testExposesNoDistributionBuildRules(): void
