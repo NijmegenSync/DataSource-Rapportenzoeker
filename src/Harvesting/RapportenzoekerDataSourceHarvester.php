@@ -172,7 +172,7 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 $dataset['resources'][] = $resource;
             }
 
-            $dataset['modificationDate'] = \sprintf('%s-12-31', $dataset['modificationDate']);
+            $dataset['modificationDate'] = \sprintf('%s-12-31T00:00:00', $dataset['modificationDate']);
 
             $harvest_result = new HarvestResult();
             $harvest_result->setResult($dataset);
