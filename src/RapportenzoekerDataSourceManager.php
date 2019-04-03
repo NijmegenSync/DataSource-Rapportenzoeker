@@ -3,6 +3,7 @@
 namespace NijmegenSync\DataSource\Rapportenzoeker;
 
 use NijmegenSync\Contracts\BaseNijmegenSyncModule;
+use NijmegenSync\Dataset\Mapping\MapperFactory;
 use NijmegenSync\DataSource\Harvesting\HarvestingFrequency;
 use NijmegenSync\DataSource\Harvesting\IDataSourceHarvester;
 use NijmegenSync\DataSource\IDataSourceManager;
@@ -29,6 +30,9 @@ class RapportenzoekerDataSourceManager extends BaseNijmegenSyncModule implements
 
     /** @var string */
     protected $base_uri;
+
+    /** @var string */
+    protected $resource_base_uri;
 
     /** @var string */
     protected $harvesting_frequency;
@@ -75,7 +79,9 @@ class RapportenzoekerDataSourceManager extends BaseNijmegenSyncModule implements
             $settings_file     = \sprintf('%s/%s', __DIR__, '../var/settings.json');
             $settings_contents = $this->file_system_helper->readFile($settings_file);
             $settings_json     = \json_decode($settings_contents, true);
-            $settings_keys     = ['name', 'web_address', 'harvesting_frequency', 'base_uri'];
+            $settings_keys     = [
+                'name', 'web_address', 'harvesting_frequency', 'base_uri', 'resource_base_uri',
+            ];
 
             foreach ($settings_keys as $key) {
                 if (!\array_key_exists($key, $settings_json)) {
@@ -110,6 +116,17 @@ class RapportenzoekerDataSourceManager extends BaseNijmegenSyncModule implements
 
             $this->harvester = new RapportenzoekerDataSourceHarvester();
             $this->harvester->setBaseURI($this->base_uri);
+            $this->harvester->setResourceBaseURI($this->resource_base_uri);
+
+            $pre_build_mapper = MapperFactory::createSingleValueMapperFromFile(
+                $this->value_mappings_file_path,
+                $this->file_system_helper,
+                'pre_builder_theme'
+            );
+
+            if (null != $pre_build_mapper) {
+                $this->harvester->setPreBuilderThemeMapper($pre_build_mapper);
+            }
 
             $this->is_initialized = true;
         } catch (IOException $e) {

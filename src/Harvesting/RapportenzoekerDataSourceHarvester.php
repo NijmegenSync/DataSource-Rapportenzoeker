@@ -5,6 +5,7 @@ namespace NijmegenSync\DataSource\Rapportenzoeker\Harvesting;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use NijmegenSync\Contracts\IAuthenticationDetails;
+use NijmegenSync\Dataset\Mapping\ValueMapper;
 use NijmegenSync\DataSource\Harvesting\DataSourceUnavailableHarvestingException;
 use NijmegenSync\DataSource\Harvesting\HarvestResult;
 use NijmegenSync\DataSource\Harvesting\IDataSourceHarvester;
@@ -20,6 +21,12 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
 {
     /** @var string */
     protected $base_uri;
+
+    /** @var string */
+    protected $resource_base_uri;
+
+    /** @var ValueMapper */
+    protected $pre_builder_theme_mapper;
 
     /**
      * {@inheritdoc}
@@ -77,13 +84,53 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
     }
 
     /**
+     * Setter for the resource_base_uri property.
+     *
+     * @param string $uri The uri to set
+     */
+    public function setResourceBaseURI(string $uri): void
+    {
+        $this->resource_base_uri = $uri;
+    }
+
+    /**
+     * Setter for the pre_builder_theme_mapper property.
+     *
+     * @param ValueMapper $mapper The ValueMapper to use
+     */
+    public function setPreBuilderThemeMapper(ValueMapper $mapper): void
+    {
+        $this->pre_builder_theme_mapper = $mapper;
+    }
+
+    /**
      * Getter for the base_uri property, may return null.
      *
-     * @return string The base_uri value
+     * @return null|string The base_uri value
      */
-    public function getBaseUri(): string
+    public function getBaseUri(): ?string
     {
         return $this->base_uri;
+    }
+
+    /**
+     * Getter for the resourcebase_uri property, may return null.
+     *
+     * @return null|string The resource_base_uri value
+     */
+    public function getResourceBaseUri(): ?string
+    {
+        return $this->resource_base_uri;
+    }
+
+    /**
+     * Getter for the pre_builder_theme_mapper property, may return null.
+     *
+     * @return null|ValueMapper The assigned ValueMapper
+     */
+    public function getPreBuilderThemeMapper(): ?ValueMapper
+    {
+        return $this->pre_builder_theme_mapper;
     }
 
     /**
@@ -95,13 +142,12 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
      */
     private function extractDatasets(StreamInterface $response_body): array
     {
-        $datasets          = [];
-        $parsable_response = new \DOMDocument();
+        $datasets            = [];
+        $parsable_response   = new \DOMDocument();
         @$parsable_response->loadHTML($response_body);
         $response_as_html    = new \DOMXPath($parsable_response);
         $harvestable_objects = $response_as_html->query('//div[@id="content"]/table/tr[@class="result" or @class="result ai"]');
-
-        $datasets_per_theme = [];
+        $datasets_per_theme  = [];
 
         foreach ($harvestable_objects as $harvestable_object) {
             $theme = $response_as_html->query('td[@class="thema"]', $harvestable_object);
@@ -114,7 +160,9 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 continue;
             }
 
-            $datasets_per_theme[$theme->item(0)->nodeValue][] = $harvestable_object;
+            $transformed_theme = $this->pre_builder_theme_mapper->map($theme->item(0)->nodeValue);
+
+            $datasets_per_theme[$transformed_theme][] = $harvestable_object;
         }
 
         foreach ($datasets_per_theme as $dataset_theme => $raw_dataset) {
@@ -144,7 +192,7 @@ class RapportenzoekerDataSourceHarvester implements IDataSourceHarvester
                 if (\count($access_url) > 0) {
                     $resource['accessURL'] = \sprintf(
                         '%s%s',
-                        $this->base_uri,
+                        $this->resource_base_uri,
                         \str_replace(' ', '%20', $access_url->item(0)->nodeValue)
                     );
 
